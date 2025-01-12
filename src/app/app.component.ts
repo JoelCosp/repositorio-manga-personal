@@ -1,23 +1,31 @@
 // Importamos las dependencias necesarias de Angular y Firebase
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit  } from '@angular/core';
 import { collectionData, Firestore } from '@angular/fire/firestore'; // Para manejar datos de Firestore
 import { RouterOutlet } from '@angular/router'; // Para gestionar la navegación en la aplicación
 import { collection, getDocs } from 'firebase/firestore'; // Para interactuar con colecciones y obtener documentos de Firestore
 import { Observable } from 'rxjs'; // Para trabajar con flujos de datos asíncronos
 import { addDoc } from 'firebase/firestore'; // Para agregar documentos a Firestore
+import { initFlowbite } from 'flowbite'; // Para usar FLOWBITE
+import { MangaCardComponent } from './manga-card/manga-card.component';  // Componente de manga-card
+
+const GLOBAL_MATERIALS = [RouterOutlet, MangaCardComponent]; // RouterOutlet es necesario para las rutas en la aplicacion
 
 // Componente principal de la aplicacion 
 @Component({
   selector: 'app-root', // Selector HTML para colocar el componente en la pagina
-  imports: [RouterOutlet], // RouterOutlet es necesario para las rutas en la aplicacion
+  imports: [GLOBAL_MATERIALS], 
   templateUrl: './app.component.html', // Archivo HTML
   styleUrl: './app.component.css' // Archivo CSS
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'ff_project_1'; // Variable para almacenar el titulo de la aplicacion
   items$: Observable<any[]>; // Observable que contiene la lista de videos de FIRESTORE
   newItem = { title: '', description: '', gender: '', author: '', publication_date: '', state: '', img_url: '', qualification: '' }; // Objeto para almacenar los datos del nuevo video que se va a agregar
+
+  ngOnInit(): void {
+    initFlowbite();
+  }
 
   // El constructor es donde se inicializan los servicios y datos del componente
   constructor() {
