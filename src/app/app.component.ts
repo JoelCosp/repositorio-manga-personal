@@ -10,8 +10,10 @@ import { initFlowbite } from 'flowbite'; // Para usar FLOWBITE
 // Importaciones de componentes
 import { MangaCardComponent } from './manga-card/manga-card.component';  // Componente de manga-card
 import { CardsContainerComponent } from './cards-container/cards-container.component'; // Componente del contenedor de las cards que contienen la info de los mangas 
+import { HeaderComponent } from './header/header.component'; // Componente del header
+import { FooterComponent } from './footer/footer.component'; // Componente del footer
 
-const GLOBAL_MATERIALS = [RouterOutlet, MangaCardComponent, CardsContainerComponent]; // RouterOutlet es necesario para las rutas en la aplicacion
+const GLOBAL_MATERIALS = [RouterOutlet, MangaCardComponent, CardsContainerComponent, HeaderComponent, FooterComponent]; // RouterOutlet es necesario para las rutas en la aplicacion
 
 // Componente principal de la aplicacion 
 @Component({
@@ -37,11 +39,11 @@ export class AppComponent implements OnInit {
 
     this.items$ = collectionData(itemsCollection); // Asignamos a 'items$' los datos de la colección 'videos' como un flujo de datos (Observable)
 
-    this.addExampleData(firestore); this.addExampleData(firestore);
+    //this.addExampleData(firestore); this.addExampleData(firestore);
   }
 
   // Método asíncrono para agregar datos de ejemplo a la colección 'videos' si está vacía
-  async addExampleData(firestore:Firestore) {
+  /* async addExampleData(firestore:Firestore) {
     const itemsCollection = collection(firestore, 'Mangas'); // Referenciamos la colección 'videos' de Firestore nuevamente
     const snapshot = await getDocs(itemsCollection); // Obtenemos los documentos de la colección
 
@@ -65,5 +67,5 @@ export class AppComponent implements OnInit {
         console.log('---> No se agregó: ', error); // Si ocurre un error al agregar, lo mostramos en la consola
       }
     }
-  }
+  } */
 }

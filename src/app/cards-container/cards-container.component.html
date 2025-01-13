@@ -1,18 +1,9 @@
 <section class="px-10">
     <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-        <app-manga-card />
-        <app-manga-card />
-        <app-manga-card />
-        <app-manga-card />
-        <app-manga-card />
-        <app-manga-card />
-        <app-manga-card />
-        <app-manga-card />
-        <app-manga-card />
-        <app-manga-card />
-        <!-- <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg" alt="">
-        </div> -->
+        <app-manga-card
+            *ngFor="let manga of mangas"
+            [manga]="manga"> <!-- Pasa cada manga al componente hijo -->
+        </app-manga-card>
     </div>
 </section>
 
