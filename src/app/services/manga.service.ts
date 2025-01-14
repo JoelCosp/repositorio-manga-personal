@@ -5,6 +5,27 @@ import { Observable } from 'rxjs'; // Para manejar observables
 import { getDocs, addDoc } from 'firebase/firestore';
 import { getDatabase, ref, set } from "firebase/database";
 
+
+// Las funciones que se usan para el CRUD con firebase, vienen predefinidas por el SDK de Firebase.  
+
+/* 
+  --> FUNCIONES CREATE:
+      - addDoc o setDoc()
+
+  --> FUNCIONES READ:
+      - getDoc()
+      - getDocs()
+      - collectionData()
+
+  --> FUNCIONES UPDATE
+      - updateDoc()
+
+  --> FUNCIONES DELETE
+      - deleteDoc()
+
+*/
+
+
 @Injectable({
   providedIn: 'root' // Este servicio estara disponible en toda la app
 })
