@@ -1,0 +1,17 @@
+* {
+    color: white;
+}
+
+nav {
+    background-color: #1b1b1b;
+    margin: 0 0 16px 0;
+}
+
+ul {
+    background-color: transparent;
+}
+
+a:hover {
+    transition: all 0.2s ease;
+    color: #ee9d16;
+}

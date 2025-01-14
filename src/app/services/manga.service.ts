@@ -1,6 +1,6 @@
 // manga.service.ts
 import { Injectable } from '@angular/core';
-import { Firestore, collection, collectionData } from '@angular/fire/firestore'; // Para interactuar con Firestore
+import { Firestore, collection, collectionData, doc, deleteDoc } from '@angular/fire/firestore'; // Para interactuar con Firestore
 import { Observable } from 'rxjs'; // Para manejar observables
 import { getDocs, addDoc } from 'firebase/firestore';
 import { getDatabase, ref, set } from "firebase/database";
@@ -34,6 +34,18 @@ export class MangaService {
       console.error('Error al añadir el manga:', error);
 
       // Relanza el error para que pueda ser manejado por quien llame a esta función
+      throw error;
+    }
+  }
+
+  // Método para eliminar un manga
+  async deleteManga(id: string): Promise<void> {
+    const mangaDoc = doc(this.firestore, `Mangas/${id}`); // Referencia al documento
+    try {
+      await deleteDoc(mangaDoc); // Eliminar el documento
+      console.log('Manga eliminado exitosamente:', id);
+    } catch (error) {
+      console.error('Error al eliminar el manga:', error);
       throw error;
     }
   }

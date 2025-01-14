@@ -20,4 +20,18 @@ h5 {
     height: 100px;
     max-height: 100px;
     overflow: scroll;
+    overflow-x: hidden;
 }
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #ee9d16;
+    border-radius: 50px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
