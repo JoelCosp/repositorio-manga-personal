@@ -6,6 +6,8 @@ import { collection, getDocs } from 'firebase/firestore'; // Para interactuar co
 import { Observable } from 'rxjs'; // Para trabajar con flujos de datos asíncronos
 import { addDoc } from 'firebase/firestore'; // Para agregar documentos a Firestore
 import { initFlowbite } from 'flowbite'; // Para usar FLOWBITE
+import { FormsModule } from '@angular/forms'; // Importa FormsModule aquí
+import { AddMangaBtnComponent } from './add-manga-btn/add-manga-btn.component';
 
 // Importaciones de componentes
 import { MangaCardComponent } from './manga-card/manga-card.component';  // Componente de manga-card
@@ -13,7 +15,7 @@ import { CardsContainerComponent } from './cards-container/cards-container.compo
 import { HeaderComponent } from './header/header.component'; // Componente del header
 import { FooterComponent } from './footer/footer.component'; // Componente del footer
 
-const GLOBAL_MATERIALS = [RouterOutlet, MangaCardComponent, CardsContainerComponent, HeaderComponent, FooterComponent]; // RouterOutlet es necesario para las rutas en la aplicacion
+const GLOBAL_MATERIALS = [RouterOutlet, MangaCardComponent, CardsContainerComponent, HeaderComponent, FooterComponent, AddMangaBtnComponent, FormsModule]; // RouterOutlet es necesario para las rutas en la aplicacion
 
 // Componente principal de la aplicacion 
 @Component({

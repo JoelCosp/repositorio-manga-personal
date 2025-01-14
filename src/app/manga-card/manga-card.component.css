@@ -1,0 +1,23 @@
+.img-container {
+    width: 100%;
+    height: 400px; /* Ajusta la altura a tu preferencia o mantén un valor fijo */
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Esto hace que la imagen cubra todo el contenedor y recorte las partes sobrantes */
+    object-position: center;
+}
+
+h5 {
+    display: flex;
+    justify-content: space-between;   
+}
+
+.txt-description {
+    height: 100px;
+    max-height: 100px;
+    overflow: scroll;
+}
